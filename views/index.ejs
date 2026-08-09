@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+<div class="page-actions">
+  <a class="button" href="/new">+ New Message</a>
+</div>
+
+<% if (messages.length === 0) { %>
+  <p class="empty">No messages yet. Be the first to add one!</p>
+<% } else { %>
+  <ul class="message-list">
+    <% messages.forEach((message) => { %>
+      <li class="message-card">
+        <p class="message-text"><%= message.text %></p>
+        <p class="message-meta">
+          From <strong><%= message.user %></strong>
+          on <%= message.added.toLocaleString() %>
+        </p>
+        <a class="button small" href="/message/<%= message.id %>">Open</a>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+
+<%- include("partials/footer") %>

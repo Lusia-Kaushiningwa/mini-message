@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+<h2>Message details</h2>
+
+<div class="message-card detail">
+  <p class="message-text"><%= message.text %></p>
+  <p class="message-meta">
+    From <strong><%= message.user %></strong>
+    on <%= message.added.toLocaleString() %>
+  </p>
+</div>
+
+<p><a href="/">&larr; Back to messages</a></p>
+
+<%- include("partials/footer") %>
